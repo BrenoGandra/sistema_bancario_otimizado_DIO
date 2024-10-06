@@ -32,7 +32,7 @@ def criar_conta_corrente(agencia, numero_conta, usuarios, contas):
         return numero_conta
 
 #função para listar os usuários cadastrados
-def listar_usuarios():
+def listar_usuarios(usuarios):
     if not usuarios:
         print("Não há usuários cadastrados.") #aqui filtra para ver se há usuários cadastrados 
         return
@@ -98,6 +98,7 @@ def main():
     menu = """
     [u] Cadastrar Usuário
     [c] Criar Conta
+    [l] Listar Usuários
     [d] Depositar
     [s] Sacar
     [e] Extrato
@@ -125,6 +126,10 @@ def main():
 
         elif opcao == "c":
             numero_conta_sequencial = criar_conta_corrente(agencia,numero_conta_sequencial,usuarios, contas)
+
+        elif opcao == "l":
+            listar_usuarios(usuarios)
+               
             
 
         elif opcao == "q":
